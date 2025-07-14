@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<%- include('partials/sidebar') %>
+
+<div class="content">
+  <h2>Monthly Expense Report</h2>
+
+  <canvas id="barChart"></canvas>
+
+  <script>
+    const ctx = document.getElementById('barChart').getContext('2d');
+    const data = {
+      labels: [<% expenses.forEach(e => { %> "<%= e.date.toISOString().slice(0,7) %>", <% }) %>],
+      datasets: [{
+        label: 'Monthly Expenses',
+        data: [<% expenses.forEach(e => { %> <%= e.amount %>, <% }) %>],
+        backgroundColor: '#3498db',
+      }]
+    };
+    new Chart(ctx, { type: 'bar', data: data });
+  </script>
+</div>
+
+<%- include('partials/footer') %>
