@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<%- include('partials/sidebar') %>
+
+<div class="content">
+  <h2>Expense Dashboard</h2>
+
+  <% 
+    let total = 0;
+    expenses.forEach(e => total += parseFloat(e.amount));
+  %>
+
+  <h3>Total Expenses: $<%= total.toFixed(2) %></h3>
+
+  <canvas id="pieChart"></canvas>
+
+  <script>
+    const ctx = document.getElementById('pieChart').getContext('2d');
+    const data = {
+      labels: [<% expenses.forEach(e => { %> "<%= e.description %>", <% }) %>],
+      datasets: [{
+        label: 'Expenses',
+        data: [<% expenses.forEach(e => { %> <%= e.amount %>, <% }) %>],
+        backgroundColor: ['#3498db', '#e74c3c', '#2ecc71', '#9b59b6', '#f1c40f'],
+      }]
+    };
+    new Chart(ctx, { type: 'pie', data: data });
+  </script>
+</div>
+
+<%- include('partials/footer') %>
