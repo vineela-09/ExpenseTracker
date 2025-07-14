@@ -66,8 +66,6 @@ Edit
 git clone https://github.com/your-username/ExpenseTracker.git
 cd ExpenseTracker
 
-The frontend will run on http://localhost:3000
-
 📦 Future Enhancements
 ✅ Monthly budget planner
 ✅ Expense reminders via email
