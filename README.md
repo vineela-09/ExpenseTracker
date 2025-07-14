@@ -17,6 +17,7 @@ Manage users and monitor high-spending alerts
 Export data reports (CSV/PDF)
 
 🛠️ Tech Stack
+
 Frontend:
 React JS
 Bootstrap 5
@@ -56,6 +57,16 @@ ExpenseTracker/
 │
 ├── .env                  # Environment variables
 └── README.md
+
+🚀 Getting Started
+1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/your-username/ExpenseTracker.git
+cd ExpenseTracker
+
+The frontend will run on http://localhost:3000
 
 📦 Future Enhancements
 ✅ Monthly budget planner
